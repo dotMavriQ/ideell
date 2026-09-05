@@ -1,0 +1,16 @@
+{
+	"name": "ideell",
+	"version": "0.1.0",
+	"private": true,
+	"description": "An accessible WordPress block theme for nonprofit associations.",
+	"license": "GPL-2.0-or-later",
+	"scripts": {
+		"contrast": "node scripts/contrast.mjs .",
+		"a11y": "node scripts/a11y.mjs",
+		"shots": "node scripts/shots.mjs"
+	},
+	"devDependencies": {
+		"@axe-core/playwright": "^4.11.3",
+		"playwright": "^1.60.0"
+	}
+}

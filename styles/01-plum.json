@@ -1,0 +1,76 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+	"version": 3,
+	"title": "Plum",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"color": "#FFFFFF",
+					"name": "Base",
+					"slug": "base"
+				},
+				{
+					"color": "#4A1533",
+					"name": "Primary",
+					"slug": "primary"
+				},
+				{
+					"color": "#310E22",
+					"name": "Primary dark",
+					"slug": "primary-dark"
+				},
+				{
+					"color": "#F4EAEF",
+					"name": "Primary tint",
+					"slug": "primary-tint"
+				},
+				{
+					"color": "#EFE2E7",
+					"name": "Secondary",
+					"slug": "secondary"
+				},
+				{
+					"color": "#FAF4F6",
+					"name": "Secondary tint",
+					"slug": "secondary-tint"
+				},
+				{
+					"color": "#1A1A1A",
+					"name": "Ink",
+					"slug": "ink"
+				},
+				{
+					"color": "#4A4A4A",
+					"name": "Ink muted",
+					"slug": "ink-muted"
+				},
+				{
+					"color": "#E2D5DB",
+					"name": "Line",
+					"slug": "line"
+				},
+				{
+					"color": "#000000",
+					"name": "Black",
+					"slug": "black"
+				},
+				{
+					"color": "#1E7A46",
+					"name": "Success",
+					"slug": "success"
+				},
+				{
+					"color": "#8A4B00",
+					"name": "Warning",
+					"slug": "warning"
+				},
+				{
+					"color": "#A81E17",
+					"name": "Error",
+					"slug": "error"
+				}
+			]
+		}
+	}
+}

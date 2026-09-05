@@ -1,0 +1,149 @@
+/* Ideell — front-end polish that theme.json cannot express.
+   Keep this small. Tokens come from theme.json custom properties. */
+
+/* Reserve the scrollbar gutter so the header never shifts horizontally
+   between pages that scroll and pages that do not. */
+html {
+	scrollbar-gutter: stable;
+}
+
+/* Sticky footer on short pages, natural flow on tall ones. */
+.wp-site-blocks {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	min-height: 100svh;
+}
+.wp-site-blocks > main {
+	flex: 1 0 auto;
+}
+
+/* Full-bleed bands must meet the header and footer with no seam. */
+.wp-site-blocks > main,
+.wp-site-blocks > footer {
+	margin-block-start: 0;
+}
+
+/* Cards stretch to the tallest in their row, and anything the author pins
+   to the bottom (a link, a button) lines up across the row. */
+.ideell-card {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Cards use flow layout, so this is only a guard for a card an editor has
+   switched to constrained. Core sets `margin-inline: auto !important` on the
+   children of a constrained group; in a flex column that shrink-wraps and
+   centres them instead of filling the card, and only !important can undo it. */
+.ideell-card.is-layout-constrained > * {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	max-width: none;
+}
+.ideell-card > .wp-block-buttons:last-child,
+.ideell-card > .wp-block-post-excerpt:last-child {
+	margin-top: auto;
+}
+.ideell-card .wp-block-post-featured-image {
+	margin-bottom: var(--wp--preset--spacing--10);
+}
+
+/* Page List and Categories render as real lists. In a footer or a navigation
+   context the markers are noise, so drop them without touching list semantics
+   used in body content. */
+.wp-site-blocks > footer :is(.wp-block-page-list, .wp-block-categories) {
+	list-style: none;
+	padding-left: 0;
+}
+.wp-site-blocks > footer :is(.wp-block-page-list, .wp-block-categories) ul {
+	list-style: none;
+	padding-left: 0;
+}
+.ideell-linklist {
+	list-style: none;
+	padding-left: 0;
+}
+
+/* Visible, high-contrast focus for keyboard users (WCAG 2.2 SC 2.4.11/2.4.13). */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+	outline: 3px solid var(--wp--preset--color--primary);
+	outline-offset: 2px;
+	border-radius: 2px;
+}
+
+/* On the primary surface, flip the ring so it stays visible. */
+.has-primary-background-color :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible,
+.has-primary-dark-background-color :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+	outline-color: var(--wp--preset--color--base);
+}
+
+/* Skip link (core injects the markup for block themes; we style it). */
+.skip-link.screen-reader-text:focus {
+	background-color: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--primary);
+	outline: 3px solid var(--wp--preset--color--primary);
+	padding: 0.75rem 1rem;
+	z-index: 100000;
+}
+
+/* Current page in the navigation, marked with more than colour alone. */
+.wp-block-navigation [aria-current="page"] {
+	text-decoration: underline;
+	text-underline-offset: 0.3em;
+	text-decoration-thickness: 2px;
+}
+
+/* Footer links inherit the surface colour rather than the global link colour. */
+.wp-site-blocks > footer a:where(:not(.wp-element-button)) {
+	color: currentColor;
+	text-underline-offset: 0.18em;
+}
+
+/* Visually hidden but available to assistive technology. Core styles this for
+   its own skip link; patterns that need a hidden label need it defined here. */
+.screen-reader-text:not(:focus):not(:active) {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+/* Fundraising progress bar. A native <progress> so it carries its own role and
+   value; the same figures are always written out in text beside it, so the bar
+   is never the only way to read the number. */
+.ideell-progress-label {
+	margin-bottom: var(--wp--preset--spacing--10);
+}
+.ideell-progress {
+	appearance: none;
+	display: block;
+	inline-size: 100%;
+	block-size: 0.75rem;
+	border: 1px solid var(--wp--preset--color--primary);
+	border-radius: var(--wp--custom--radius--full);
+	background-color: var(--wp--preset--color--base);
+	overflow: hidden;
+}
+.ideell-progress::-webkit-progress-bar {
+	background-color: var(--wp--preset--color--base);
+}
+.ideell-progress::-webkit-progress-value {
+	background-color: var(--wp--preset--color--primary);
+}
+.ideell-progress::-moz-progress-bar {
+	background-color: var(--wp--preset--color--primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}

@@ -1,0 +1,22 @@
+/*
+Theme Name: Ideell
+Theme URI: https://github.com/dotmavriq/ideell
+Author: Jonatan
+Author URI: https://dotmavriq.life
+Description: An accessible block theme for nonprofit associations — charities, foundations, patient organisations and unions. Nordic restraint, a warm serif-and-sans pairing, six style variations, and a pattern library covering the sections these organisations actually need: appeals, impact figures, programmes, knowledge bases, boards and events. Built to WCAG 2.2 AA.
+Requires at least: 6.7
+Tested up to: 7.1
+Requires PHP: 8.1
+Version: 0.1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ideell
+Tags: blog, news, education, accessibility-ready, block-patterns, block-styles, style-variations, full-site-editing, editor-style, translation-ready, wide-blocks, custom-logo, featured-images, one-column, grid-layout, rtl-language-support, template-editing, threaded-comments
+*/
+
+/*
+ * Design tokens live in theme.json — it is the single source of truth.
+ * Use this file only for what theme.json cannot express (focus polish,
+ * reduced-motion, skip link). Prefer theme.json and block patterns over
+ * hand-written CSS.
+ */
