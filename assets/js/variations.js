@@ -2,7 +2,7 @@
  * Section and Card as block variations of core/group.
  *
  * They appear in the inserter as their own named items, but what is saved is
- * plain core/group markup — so a site that later switches away from Ideell
+ * plain core/group markup, so a site that later switches away from Ideell
  * keeps valid content instead of a page of invalid-block errors.
  */
 ( function ( blocks, i18n, domReady ) {

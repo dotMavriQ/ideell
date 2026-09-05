@@ -156,7 +156,7 @@ for (const { name, palette } of variations) {
 	for (const row of bad) {
 		failed++;
 		if (row.missing) {
-			console.log(`    MISSING  ${row.fgSlug} on ${row.bgSlug}  — ${row.label}`);
+			console.log(`    MISSING  ${row.fgSlug} on ${row.bgSlug}  ${row.label}`);
 		} else {
 			console.log(
 				`    ${row.r.toFixed(2)}:1  need ${row.need}  ${row.fgSlug} (${row.fg}) on ${row.bgSlug} (${row.bg})\n` +
@@ -168,7 +168,7 @@ for (const { name, palette } of variations) {
 
 console.log(`\n${checked} pairs checked across ${variations.length} palette(s).`);
 if (failed > 0) {
-	console.error(`${failed} failing pair(s) — accessibility-ready requires all of them to pass.`);
+	console.error(`${failed} failing pair(s); accessibility-ready requires all of them to pass.`);
 	process.exit(1);
 }
 console.log('All text and UI pairs meet WCAG 2.2 AA; all surfaces are perceptible.');
